@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maze Master</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0d12; overflow: hidden; }
+  canvas { display: block; }
+  .hud {
+    position: fixed; left: 12px; padding: 8px 12px;
+    font: 13px/1.5 system-ui, sans-serif; color: #c9ced8;
+    background: rgba(11, 13, 18, .7); border-radius: 6px; pointer-events: none;
+  }
+  .hud b { color: #fff; }
+  #ayuda { bottom: 12px; }
+  #aviso { top: 12px; display: none; color: #ffb4a8; }
+  #pista { left: 50%; bottom: 64px; transform: translateX(-50%); display: none; color: #fff; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="hud" id="ayuda">
+  <b>W A S D</b> mover · <b>← →</b> girar · <b>E</b> abrir puerta · <b>C</b> colisiones: <span id="col">sí</span> ·
+  <b>T</b> techo · arrastra un .json para cargar otro nivel
+</div>
+<div class="hud" id="pista"></div>
+<div class="hud" id="aviso"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
